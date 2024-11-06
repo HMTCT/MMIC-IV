@@ -16,7 +16,7 @@ export const App = () => (
         </PageWithHeader>
       }
     >
-      <div className="h-full bg-[#DAECFA]">
+      <div className="h-fit bg-[#DAECFA]">
         <Header />
         <Router />
       </div>
