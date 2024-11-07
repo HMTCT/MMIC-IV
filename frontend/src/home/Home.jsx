@@ -1,6 +1,7 @@
 import EmergencyCases from "./home-components/EmergencyCases";
 import GeneralInfo from "./home-components/GeneralInfo";
 import PatientList from "./home-components/PatientList";
+import AdmissionEvent from "./home-components/AdmissionEvent";
 
 export const Home = () => (
   <div className="flex w-full min-h-screen h-full flex-col items-center p-[46px] gap-[40px]">
@@ -27,7 +28,7 @@ export const Home = () => (
         </div>
       </div>
       <div className="2-right-section basis-1/4">
-        <PatientList />
+        <AdmissionEvent />
       </div>
     </section>
     <section className="third-section w-full h-[400px]">

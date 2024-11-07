@@ -1,7 +1,7 @@
 const EmergencyCard = ({ name, status, room, time }) => {
   return (
     <div
-      className={`info-card w-[191px] h-full bg-[#FDE8E9] flex flex-col rounded-[12px] p-[12px] gap-[12px] justify-between`}
+      className={`urgent-card w-[191px] h-full bg-[#FDE8E9] flex flex-col rounded-[12px] p-[12px] gap-[12px] justify-between`}
     >
       <div className="flex items-center gap-[12px]">
         <div className="size-[40px] bg-white rounded-[16px] flex justify-center items-center">
