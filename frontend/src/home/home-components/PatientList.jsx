@@ -1,6 +1,35 @@
+import "../../styles/test.css";
+
+const data = [
+  {
+    patient_id: "000001",
+    patient_name: "Nguyen Van A",
+    admission_date: "18/07/2024",
+    type: "Urgent",
+    room_no: "123",
+    caregiver: "Nguyen Van B",
+  },
+  {
+    patient_id: "000001",
+    patient_name: "Nguyen Van A",
+    admission_date: "18/07/2024",
+    type: "Urgent",
+    room_no: "123",
+    caregiver: "Nguyen Van B",
+  },
+  {
+    patient_id: "000001",
+    patient_name: "Nguyen Van A",
+    admission_date: "18/07/2024",
+    type: "Urgent",
+    room_no: "123",
+    caregiver: "Nguyen Van B",
+  },
+];
+
 const PatientList = () => {
   return (
-    <div className="w-full h-full bg-white rounded-[18px] flex flex-col gap-[24px] p-[24px]">
+    <div className="w-full h-full bg-white rounded-[18px] flex flex-col gap-[16px] p-[24px] overflow-hidden">
       <div className="title-section flex items-center justify-between">
         <div className="flex flex-col">
           <p className="text-black text-xl font-semibold leading-[normal]">
@@ -18,6 +47,34 @@ const PatientList = () => {
             <img className="size-[32px]" src="src/assets/new.png" alt="new" />
           </div>
         </div>
+      </div>
+      <div className="table-section w-full">
+        <table className="w-full table-fixed rounded-[8px] overflow-hidden ">
+          <thead className="">
+            <tr className="bg-[#EDEDED] m-[40px]">
+              <th className="py-[8px] text-center ">Patient ID</th>
+              <th className="py-[8px] text-center">Patient Name</th>
+              <th className="py-[8px] text-center">Admission Date</th>
+              <th className="py-[8px] text-center">Type</th>
+              <th className="py-[8px] text-center">Room No</th>
+              <th className="py-[8px] text-center">Caregiver</th>
+            </tr>
+          </thead>
+          {/* <div className="w-full max-h-[174px] overflow-y-auto"> */}
+          <tbody className="w-full h-full overflow-y-auto overflow-x-hidden">
+            {data.map((item, index) => (
+              <tr key={index} className="w-full h-[40px]">
+                <td className="py-[8px] text-center">{item.patient_id}</td>
+                <td className="py-[8px] text-center">{item.patient_name}</td>
+                <td className="py-[8px] text-center">{item.admission_date}</td>
+                <td className="py-[8px] text-center">{item.type}</td>
+                <td className="py-[8px] text-center">{item.room_no}</td>
+                <td className="py-[8px] text-center">{item.caregiver}</td>
+              </tr>
+            ))}
+          </tbody>
+          {/* </div> */}
+        </table>
       </div>
     </div>
   );
