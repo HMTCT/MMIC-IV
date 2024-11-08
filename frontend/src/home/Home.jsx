@@ -34,7 +34,7 @@ export const Home = () => (
         <AdmissionEvent />
       </div>
     </section>
-    <section className="third-section w-full h-[400px]">
+    <section className="third-section w-full h-[440px]">
       <PatientStatistics />
     </section>
   </div>

@@ -19,7 +19,17 @@ const chartSetting = {
   ],
   sx: {
     [`.${axisClasses.left} .${axisClasses.label}`]: {
-      transform: "translate(-12px, 0)",
+      transform: "translate(-10px, 0)",
+      fontFamily: "Poppins, sans-serif",
+      fontSize: "16px",
+    },
+    [`.${axisClasses.left} .${axisClasses.tickLabel}`]: {
+      fontFamily: "Poppins, sans-serif",
+      fontSize: "12px",
+    },
+    [`.${axisClasses.bottom} .${axisClasses.tickLabel}`]: {
+      fontFamily: "Poppins, sans-serif",
+      fontSize: "12px",
     },
   },
 };
