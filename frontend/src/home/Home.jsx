@@ -2,6 +2,9 @@ import EmergencyCases from "./home-components/EmergencyCases";
 import GeneralInfo from "./home-components/GeneralInfo";
 import PatientList from "./home-components/PatientList";
 import AdmissionEvent from "./home-components/AdmissionEvent";
+import AdmissionUrgency from "./home-components/AdmissionUrgency";
+import PatientLoad from "./home-components/PatientLoad";
+import PatientStatistics from "./home-components/PatientStatistics";
 
 export const Home = () => (
   <div className="flex w-full min-h-screen h-full flex-col items-center p-[46px] gap-[40px]">
@@ -20,10 +23,10 @@ export const Home = () => (
         </div>
         <div className="2-l-bot-section gap-[40px] flex basis-1/2">
           <div className="basis-1/2">
-            <PatientList />
+            <AdmissionUrgency />
           </div>
           <div className="basis-1/2">
-            <PatientList />
+            <PatientLoad />
           </div>
         </div>
       </div>
@@ -32,7 +35,7 @@ export const Home = () => (
       </div>
     </section>
     <section className="third-section w-full h-[400px]">
-      <PatientList />
+      <PatientStatistics />
     </section>
   </div>
 );
