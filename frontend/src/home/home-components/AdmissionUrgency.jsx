@@ -1,5 +1,4 @@
 import { Gauge, gaugeClasses } from "@mui/x-charts/Gauge";
-import ArcDesign from "./ArcDesign";
 
 const AdmissionUrgency = () => {
   return (
@@ -14,8 +13,8 @@ const AdmissionUrgency = () => {
           </p>
         </div>
       </div>
-      <div className="w-full h-full relative">
-        <div className="h-[100%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="gauge-container w-full h-full relative">
+        <div className="h-[100%] w-[100%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <Gauge
             value={70}
             valueMin={0}
@@ -36,13 +35,13 @@ const AdmissionUrgency = () => {
             }}
           />
           <p
-            className="absolute top-[8%] left-[38%] transform -translate-x-1/2 -translate-y-1/2
+            className="absolute top-[8%] left-[42%] transform -translate-x-1/2 -translate-y-1/2
           text-black text-xs font-normal leading-[normal]"
           >
             Critical
           </p>
         </div>
-        <div className="h-[85%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="h-[85%] w-[100%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <Gauge
             value={50}
             valueMin={0}
@@ -63,13 +62,13 @@ const AdmissionUrgency = () => {
             }}
           />
           <p
-            className="absolute top-[9%] left-[29%] transform -translate-x-1/2 -translate-y-1/2
+            className="absolute top-[9%] left-[38%] transform -translate-x-1/2 -translate-y-1/2
           text-black text-xs font-normal leading-[normal]"
           >
             Intermediate
           </p>
         </div>
-        <div className="h-[70%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="h-[70%] w-[100%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <Gauge
             value={30}
             valueMin={0}
@@ -90,7 +89,7 @@ const AdmissionUrgency = () => {
             }}
           />
           <p
-            className="absolute top-[10%] left-[35%] transform -translate-x-1/2 -translate-y-1/2
+            className="absolute top-[10%] left-[40.3%] transform -translate-x-1/2 -translate-y-1/2
           text-black text-xs font-normal leading-[normal]"
           >
             Standard
