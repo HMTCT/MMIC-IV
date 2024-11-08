@@ -48,11 +48,11 @@ const PatientList = () => {
           </div>
         </div>
       </div>
-      <div className="table-section w-full">
-        <table className="w-full table-fixed rounded-[8px] overflow-hidden ">
-          <thead className="">
-            <tr className="bg-[#EDEDED] m-[40px]">
-              <th className="py-[8px] text-center ">Patient ID</th>
+      <div className="table-section w-full max-h-[204px] overflow-y-auto">
+        <table className="w-full table-fixed rounded-[8px] overflow-hidden">
+          <thead>
+            <tr className="bg-[#EDEDED]">
+              <th className="py-[8px] text-center">Patient ID</th>
               <th className="py-[8px] text-center">Patient Name</th>
               <th className="py-[8px] text-center">Admission Date</th>
               <th className="py-[8px] text-center">Type</th>
@@ -60,10 +60,9 @@ const PatientList = () => {
               <th className="py-[8px] text-center">Caregiver</th>
             </tr>
           </thead>
-          {/* <div className="w-full max-h-[174px] overflow-y-auto"> */}
-          <tbody className="w-full h-full overflow-y-auto overflow-x-hidden">
+          <tbody>
             {data.map((item, index) => (
-              <tr key={index} className="w-full h-[40px]">
+              <tr key={index} className="h-[40px]">
                 <td className="py-[8px] text-center">{item.patient_id}</td>
                 <td className="py-[8px] text-center">{item.patient_name}</td>
                 <td className="py-[8px] text-center">{item.admission_date}</td>
@@ -73,7 +72,6 @@ const PatientList = () => {
               </tr>
             ))}
           </tbody>
-          {/* </div> */}
         </table>
       </div>
     </div>
