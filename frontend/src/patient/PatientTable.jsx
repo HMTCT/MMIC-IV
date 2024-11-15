@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import fetchPatientData from './fetchPatientData'; // Ensure this function is asynchronous and returns a list of patients
 import NewPatientModal from './NewPatientModal';
+import EditPatientModal from './EditPatientModal';
 
 const PatientTable = () => {
   const [patients, setPatients] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [showModal, setShowModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [selectedPatient, setSelectedPatient] = useState(false);
 
   // Structure to store new patient data
   const [newPatient, setNewPatient] = useState({
@@ -41,6 +44,13 @@ const PatientTable = () => {
   const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
 
+  const openEditModal = (patient) => {
+    setSelectedPatient(patient);
+    setShowEditModal(true);
+  };
+
+  const closeEditModal = () => setShowEditModal(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewPatient((prev) => ({
@@ -66,6 +76,14 @@ const PatientTable = () => {
     });
   };
 
+  const handleEditSave = (updatedPatient) => {
+    const updatedPatients = patients.map((p) =>
+      p.id === updatedPatient.id ? updatedPatient : p
+    );
+    setPatients(updatedPatients);
+    closeEditModal();
+  };
+
   return (
     <div className="bg-white shadow-md rounded-lg p-6 m-4">
       <div className="flex justify-between items-center mb-4">
@@ -81,6 +99,13 @@ const PatientTable = () => {
         newPatient={newPatient}
         handleChange={handleChange}
         handleSave={handleSave}
+      />
+
+      <EditPatientModal
+        showModal={showEditModal}
+        closeModal={closeEditModal}
+        patient={selectedPatient}
+        handleSave={handleEditSave}
       />
 
       <p className="text-gray-500 mb-4">Information about ICU patient</p>
@@ -109,7 +134,9 @@ const PatientTable = () => {
               <td className="p-2">{patient.type}</td>
               <td className="p-2">{patient.roomNo}</td>
               <td className="p-2">{patient.caregiver}</td>
-              <td className="p-2 text-blue-500">Detail</td>
+              <td className="p-2 text-blue-500 cursor-pointer" onClick={() => openEditModal(patient)}>
+                Detail
+              </td>
             </tr>
           ))}
         </tbody>
