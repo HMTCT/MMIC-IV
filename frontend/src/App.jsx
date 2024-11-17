@@ -1,17 +1,27 @@
-import React from 'react';
-import Header from './patient/Header';
-import PatientTable from './patient/PatientTable';
-import './index.css';
+import { Suspense } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./general/Router.jsx";
+import { Loading } from "./components/Loading.jsx";
+import Header from "./components/Header.jsx";
+export const PageWithHeader = ({ children }) => (
+  <div className="flex h-full flex-col">{children}</div>
+);
 
-function App() {
-  return (
-    <div className="App" style={{ backgroundColor: '#DAECFA', minHeight: '100vh' }}>
-      <Header />
-      <main className="container mx-auto p-4">
-        <PatientTable />
-      </main>
-    </div>
-  );
-}
+export const App = () => (
+  <BrowserRouter>
+    <Suspense
+      fallback={
+        <PageWithHeader>
+          <Loading name="suspense" />
+        </PageWithHeader>
+      }
+    >
+      <div className="h-fit bg-[#DAECFA]">
+        <Header />
+        <Router />
+      </div>
+    </Suspense>
+  </BrowserRouter>
+);
 
 export default App;
