@@ -38,7 +38,7 @@ const EmergencyCases = () => {
           Emergency Cases
         </p>
       </div>
-      <div className="flex gap-[24px] overflow-x-auto overflow-y-hidden max-w-full whitespace-nowrap">
+      <div className="flex h-full gap-[24px] overflow-x-auto overflow-y-hidden max-w-full whitespace-nowrap">
         {data.map((item, index) => (
           <EmergencyCard key={index} {...item} />
         ))}
